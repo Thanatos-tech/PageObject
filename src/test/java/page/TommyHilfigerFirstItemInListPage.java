@@ -13,9 +13,9 @@ public class TommyHilfigerFirstItemInListPage extends AbstractPage  {
     }
 
     public TommyHilfigerFirstItemInListPage addItemInFavorite(){
-        WebElement addingInFavoriteToggle = waitForElementsLocatedBy(driver,
+        WebElement addInFavoriteToggle = waitForElementsLocatedBy(driver,
                 By.xpath("//span[@class='wishlist__toggle--button']"));
-        addingInFavoriteToggle.click();
+        addInFavoriteToggle.click();
         return this;
     }
 
