@@ -30,7 +30,7 @@ public class PageObjectTommyHilfigerTest {
     public void searchItemTest() throws InterruptedException {
         String searchingResult = new TommyHilfigerHomePage(driver)
                 .openPage()
-                .closeCoockiesPoliticsWindow()
+                .closeCookiesPoliticsWindow()
                 .inputValueInSearchBar(expectedResultOfSearchingItem)
                 .getColourOfFirstItemFromSearchResults();
         Assert.assertEquals(searchingResult, expectedResultOfSearchingItem);
@@ -40,7 +40,7 @@ public class PageObjectTommyHilfigerTest {
     public void addItemInFavoriteTest() throws InterruptedException {
         Integer favoriteResult = new TommyHilfigerHomePage(driver)
                 .openPage()
-                .closeCoockiesPoliticsWindow()
+                .closeCookiesPoliticsWindow()
                 .openMensClothesPage()
                 .openFirstItemPage()
                 .addItemInFavorite()
