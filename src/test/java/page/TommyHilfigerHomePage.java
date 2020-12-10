@@ -20,27 +20,25 @@ public class TommyHilfigerHomePage extends AbstractPage {
         return this;
     }
 
-    public TommyHilfigerSearchResultsPage inputValueInSearchBar(){
-        WebElement headerInput = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("headerSearchInput")));
+    public TommyHilfigerSearchResultsPage inputValueInSearchBar(String inputValue){
+        WebElement headerInput = waitForElementsLocatedBy(driver,
+                By.id("headerSearchInput"));
         headerInput.click();
-        headerInput.sendKeys("MW0MW12983_BD2");
+        headerInput.sendKeys(inputValue);
         headerInput.sendKeys(Keys.ENTER);
         return new TommyHilfigerSearchResultsPage(driver);
     }
 
     public TommyHilfigerHomePage closeCoockiesPoliticsWindow(){
-        WebElement closeCookiesPoliticsButton = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(By
-                        .xpath("//button[@class='cookie-notice__agree-button cookie-notice__agree-button--ru button']")));
+        WebElement closeCookiesPoliticsButton = waitForElementsLocatedBy(driver,
+                By.xpath("//button[@class='cookie-notice__agree-button cookie-notice__agree-button--ru button']"));
         closeCookiesPoliticsButton.click();
         return this;
     }
 
-    public TommyHilfigerMensClothesPage openFestiveStylePage(){
-        WebElement festiveStyleButton = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(By
-                        .xpath("//a[@data-track-container-of-cta-id='3243130']")));
+    public TommyHilfigerMensClothesPage openMensClothesPage(){
+        WebElement festiveStyleButton = waitForElementsLocatedBy(driver,
+                By.xpath("//a[@data-track-container-of-cta-id='3243130']"));
         festiveStyleButton.click();
         return new TommyHilfigerMensClothesPage(driver);
     }

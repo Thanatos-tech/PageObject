@@ -31,7 +31,7 @@ public class PageObjectTommyHilfigerTest {
         String searchingResult = new TommyHilfigerHomePage(driver)
                 .openPage()
                 .closeCoockiesPoliticsWindow()
-                .inputValueInSearchBar()
+                .inputValueInSearchBar(expectedResultOfSearchingItem)
                 .getColourOfFirstItemFromSearchResults();
         Boolean itemSearchResult = searchingResult.equals(expectedResultOfSearchingItem);
         Assert.assertTrue(itemSearchResult,"Item not found");
@@ -42,7 +42,7 @@ public class PageObjectTommyHilfigerTest {
         Integer favoriteResult = new TommyHilfigerHomePage(driver)
                 .openPage()
                 .closeCoockiesPoliticsWindow()
-                .openFestiveStylePage()
+                .openMensClothesPage()
                 .openFirstItemPage()
                 .addItemInFavorite()
                 .openFavoritePage()

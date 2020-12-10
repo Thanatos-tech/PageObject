@@ -13,17 +13,15 @@ public class TommyHilfigerFirstItemInListPage extends AbstractPage  {
     }
 
     public TommyHilfigerFirstItemInListPage addItemInFavorite(){
-        WebElement addingInFavoriteToggle = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(By
-                        .xpath("//span[@class='wishlist__toggle--button']")));
+        WebElement addingInFavoriteToggle = waitForElementsLocatedBy(driver,
+                By.xpath("//span[@class='wishlist__toggle--button']"));
         addingInFavoriteToggle.click();
         return this;
     }
 
     public TommyHilfigerFavoritePage openFavoritePage(){
-        WebElement favoriteButton = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(By
-                        .xpath("//button[@class='wishlist__button']")));
+        WebElement favoriteButton = waitForElementsLocatedBy(driver,
+                By.xpath("//button[@class='wishlist__button']"));
         favoriteButton.click();
         return new TommyHilfigerFavoritePage(driver);
     }
