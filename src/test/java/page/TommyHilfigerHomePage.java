@@ -1,12 +1,9 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TommyHilfigerHomePage extends AbstractPage {
 
@@ -21,28 +18,28 @@ public class TommyHilfigerHomePage extends AbstractPage {
 
     private final String HOMEPAGE_URL = "https://ru.tommy.com/%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B";
 
-    public TommyHilfigerHomePage(WebDriver driver){
+    public TommyHilfigerHomePage(WebDriver driver) {
         super(driver);
     }
 
-    public TommyHilfigerHomePage openPage(){
+    public TommyHilfigerHomePage openPage() {
         driver.get(HOMEPAGE_URL);
         return this;
     }
 
-    public TommyHilfigerSearchResultsPage inputValueInSearchBar(String inputValue){
+    public TommyHilfigerSearchResultsPage inputValueInSearchBar(String inputValue) {
         headerInput.click();
         headerInput.sendKeys(inputValue);
         headerInput.sendKeys(Keys.ENTER);
         return new TommyHilfigerSearchResultsPage(driver);
     }
 
-    public TommyHilfigerHomePage closeCookiesPoliticsWindow(){
+    public TommyHilfigerHomePage closeCookiesPoliticsWindow() {
         closeCookiesPoliticsButton.click();
         return this;
     }
 
-    public TommyHilfigerMensClothesPage openMensClothesPage(){
+    public TommyHilfigerMensClothesPage openMensClothesPage() {
         mensClothesButton.click();
         return new TommyHilfigerMensClothesPage(driver);
     }

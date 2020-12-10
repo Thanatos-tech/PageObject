@@ -1,19 +1,12 @@
 package test;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.TommyHilfigerHomePage;
-
-import java.util.List;
 
 public class PageObjectTommyHilfigerTest {
     private WebDriver driver;
@@ -21,7 +14,7 @@ public class PageObjectTommyHilfigerTest {
     private final String expectedResultOfSearchingItem = "MW0MW12983_BD2";
 
     @BeforeMethod(alwaysRun = true)
-    public void browserSetup(){
+    public void browserSetup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
