@@ -33,8 +33,7 @@ public class PageObjectTommyHilfigerTest {
                 .closeCoockiesPoliticsWindow()
                 .inputValueInSearchBar(expectedResultOfSearchingItem)
                 .getColourOfFirstItemFromSearchResults();
-        Boolean itemSearchResult = searchingResult.equals(expectedResultOfSearchingItem);
-        Assert.assertTrue(itemSearchResult,"Item not found");
+        Assert.assertEquals(searchingResult, expectedResultOfSearchingItem);
     }
 
     @Test
